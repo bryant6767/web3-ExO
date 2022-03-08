@@ -57,7 +57,6 @@ const Welcome = () => {
                     </h2>
                     
                     <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-10">
-                        <div className={'rounded-tl-2xl ${commonStyles}'}>
                         <div className={commonStyles}>
                             <center> hieumuses <br /> bigdickdev </center> 
                         </div>
@@ -141,7 +140,6 @@ const Welcome = () => {
                 </div>
             </div>
         </div>
-    </div>
     );
 }
 export default Welcome;

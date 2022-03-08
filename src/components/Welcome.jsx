@@ -1,6 +1,7 @@
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle } from 'react-icons/bs';
+import {membersNameAndBios} from '../constants/team'
 
 
 import { Loader } from './';
@@ -32,13 +33,14 @@ const Welcome = () => {
         <div className="flex w-full justify-center items-center">
             <div className="flex mf:flex-row flex-col items-start justify-between md:p-20 py-12 px-4">
                 <div className=" flex flex-1 justify-start flex-col mf:mr-10">
-                    <h1 className="text-3xl sm:text-5xl text-white py-1">
-                    Excavators n Obelisks
-                    <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
-                        Share your efforts, resources, and stories. <br /> Excavate. Build. Battle. Explore. Innovate. 
-                    </p>
-
-                    </h1>
+                    <div>
+                        <h1 className="text-3xl sm:text-5xl text-white py-1">
+                            Excavators n Obelisks
+                        </h1>
+                        <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
+                            Share your efforts, resources, and stories. <br /> Excavate. Build. Battle. Explore. Innovate. 
+                        </p>
+                    </div>
                     <button
                         type="button"
                         onClick={connectWallet}
@@ -56,6 +58,7 @@ const Welcome = () => {
                     
                     <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-10">
                         <div className={'rounded-tl-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> hieumuses <br /> bigdickdev </center> 
                         </div>
 
@@ -63,11 +66,11 @@ const Welcome = () => {
                             <center>sabstuh <br/> talented digital artist </center>
                         </div>
                         
-                        <div className={'rounded-tr-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> TheBriManXD <br /> Marketing and Finance </center> 
                         </div>
                         
-                        <div className={'rounded-bl-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> eddybear <br /> bigdickdev </center> 
                         </div>
                             
@@ -75,11 +78,11 @@ const Welcome = () => {
                             <center> burke <br/> talented 3D artist </center>
                         </div>
                         
-                        <div className={'rounded-br-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> alex.win <br /> Marketing and Finance </center> 
                         </div>
                             
-                        <div className={'rounded-bl-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> yammshy <br /> world builder </center> 
                         </div>
                             
@@ -87,7 +90,7 @@ const Welcome = () => {
                             <center> deanbaby <br/> talented 3D artist </center>
                         </div>
                             
-                        <div className={'rounded-br-2xl ${commonStyles}'}>
+                        <div className={commonStyles}>
                             <center> habibi <br /> ??? </center> 
                         </div>
                     </div>

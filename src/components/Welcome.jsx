@@ -1,10 +1,10 @@
-import { AiFillPlayCircle } from 'react-icons/ai';
-import { SiEthereum } from 'react-icons/si';
-import { BsInfoCircle } from 'react-icons/bs';
-import {membersNameAndBios} from '../constants/team'
+import React, { useContext } from "react";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { SiEthereum } from "react-icons/si";
+import { BsInfoCircle } from "react-icons/bs";
 
-
-import { Loader } from './';
+import { TransactionContext } from "../context/TransactionContext";
+import { Loader } from "./";
 
 const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -20,10 +20,12 @@ const Input = ({placeholder, name, type, value, handleChange}) => (
 )
 
 const Welcome = () => {
+    const { connectWallet } = useContext(TransactionContext);
 
-    const connectWallet = () => {
-
-    };
+    //if this works, that means we are transferring all of the data
+    //from TransactionContext to all of our components [can check in window.ethereum]
+    // USED EARLIER TO GENERATE Transactions.json and copied over to Client Directory
+    //console.log(value);
 
     const handleSubmit = () => {
 
@@ -43,7 +45,7 @@ const Welcome = () => {
                     </div>
                     <button
                         type="button"
-                        onClick={connectWallet}
+                        onClick={ connectWallet }
                         className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
                     >
                         <AiFillPlayCircle className="text-white mr-2" />
@@ -57,6 +59,7 @@ const Welcome = () => {
                     </h2>
                     
                     <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-10">
+                        <div className={'rounded-tl-2xl ${commonStyles}'}>
                         <div className={commonStyles}>
                             <center> hieumuses <br /> bigdickdev </center> 
                         </div>
@@ -140,6 +143,7 @@ const Welcome = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 export default Welcome;

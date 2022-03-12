@@ -1,24 +1,29 @@
 {
-  "name": "exo",
+  "name": "theobelisk",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "ethers": "^5.5.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "next": "12.0.8"
   },
   "devDependencies": {
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
     "@tailwindcss/forms": "^0.5.0",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.7",
-    "tailwindcss": "^3.0.23",
-    "vite": "^2.8.0"
-  }
+    "tailwindcss": "^3.0.23"
+  },
+  "version": "1.0.0"
 }

@@ -5,7 +5,7 @@ import { contractABI, contractAddress } from "../utils/constants";
 
 export const TransactionContext = React.createContext();
 
-const { ethereum } = window; //window.ethereum
+const { ethereum } = globalThis; //globalThis.ethereum
 
 const getEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
@@ -24,6 +24,7 @@ const getEthereumContract = () => {
 export const TransactionsProvider = ({ children }) => {   
     
     const [connectedAccount, setConnectedAccount] = useState("");
+    const [currentAccount, setCurrentAccount] = useState("");
     
     const checkIfWalletIsConnect = async () => {
         if (!ethereum) return alert("Please Install MetaMask");
@@ -31,6 +32,7 @@ export const TransactionsProvider = ({ children }) => {
         const accounts = await ethereum.request({ method: 'eth_accounts' });
 
         console.log(accounts);
+        return !!accounts;
     }
 
     const connectWallet = async () => {
@@ -39,10 +41,9 @@ export const TransactionsProvider = ({ children }) => {
             const accounts = await ethereum.request({ method: 'eth_requestAccounts', });
             
             setCurrentAccount(accounts[0]);
-            window.location.reload();
+            //globalThis.location.reload();
         } catch (error) {
             console.log(error);
-
             throw new Error("No Ethereum Object.")
         }
     }
